@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container my-5">
+      <div class="control w-100 d-flex justify-content-around">
+        <button class="btn btn-success all-user">All Users</button>
+        <div class="d-flex">
+          <input
+            type="number"
+            placeholder="ID"
+            class="me-3 form-control id_val"
+            style="width: 70px"
+          />
+          <button class="btn btn-primary one-user mx-">One User</button>
+        </div>
+        <button class="btn btn-secondary delay-info">Delayed Infos</button>
+        <button
+          class="btn btn-success"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasTop"
+          aria-controls="offcanvasTop"
+        >
+          Add
+        </button>
+        
+      </div>
+
+      <div class="result m-5 row justify-content-around flex-wrap"></div>
+
+      <div class="add_info">
+        <div
+          class="offcanvas offcanvas-top"
+          tabindex="-1"
+          id="offcanvasTop"
+          aria-labelledby="offcanvasTopLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasTopLabel">
+              Create new User
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <form
+              action="https://reqres.in/api/users"
+              method="post"
+              class="d-flex mx-5"
+            >
+              <input type="file" onchange="getPic(this)" accept=".jpg, .jpeg, .png"  name="avatar" class="form-control mx-4" />
+              <input type="text" placeholder="name" name="name" class="name form-control" />
+              <input type="text" placeholder="job" name="job" class="job form-control mx-4" />
+              <input type="email" placeholder="email" name="email" class="email form-control mx-4" />
+              <input type="submit" value="Submit" class="btn btn-success" aria-label="Close" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <i
+        class="fa-solid fa-spinner fa-spin w-auto loading-icon d-none"
+        style="font-size: 75px; margin-top: 20vh; margin-left: 48%"
+      ></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
